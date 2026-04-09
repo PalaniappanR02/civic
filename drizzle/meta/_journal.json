@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1775716861381,
+      "tag": "0000_cold_giant_girl",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1775717145728,
+      "tag": "0001_majestic_anthem",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1775719339542,
+      "tag": "0002_keen_mulholland_black",
+      "breakpoints": true
+    }
+  ]
+}
