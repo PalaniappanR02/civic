@@ -4,7 +4,6 @@ import { createExpressMiddleware } from "@trpc/server/adapters/express";
 import { registerOAuthRoutes } from "../server/_core/oauth";
 import { appRouter } from "../server/routers";
 import { createContext } from "../server/_core/context";
-import { serveStatic } from "../server/_core/vite";
 
 const app = express();
 // Configure body parser with larger size limit for file uploads
@@ -20,7 +19,5 @@ app.use(
     createContext,
   })
 );
-// production mode uses static files
-serveStatic(app);
 
 export default app;

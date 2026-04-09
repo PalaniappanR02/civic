@@ -22,8 +22,6 @@ app.use(
     createContext,
   })
 );
-// production mode uses static files
-serveStatic(app);
 
 function isPortAvailable(port: number): Promise<boolean> {
   return new Promise(resolve => {
@@ -47,9 +45,10 @@ async function findAvailablePort(startPort: number = 3000): Promise<number> {
 async function startServer() {
   const server = createServer(app);
 
-  // For development, set up Vite
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);
+  } else {
+    serveStatic(app);
   }
 
   const preferredPort = parseInt(process.env.PORT || "3000");
@@ -64,9 +63,8 @@ async function startServer() {
   });
 }
 
-// For Vercel serverless deployment
-if (process.env.VERCEL) {
-  export default app;
-} else {
+export default app;
+
+if (!process.env.VERCEL) {
   startServer().catch(console.error);
 }
