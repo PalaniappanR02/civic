@@ -6,7 +6,7 @@
     "NODE_ENV": "production"
   },
   "functions": {
-    "server/_core/index.ts": {
+    "api/index.ts": {
       "memory": 1024,
       "maxDuration": 60
     }
